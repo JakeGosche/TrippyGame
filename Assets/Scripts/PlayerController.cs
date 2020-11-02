@@ -51,10 +51,13 @@ public class PlayerController : MonoBehaviour
                 moveDirection.y = movementDirectionY;
             }
 
-            // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
-            // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
-            // as an acceleration (ms^-2)
-            if (!characterController.isGrounded)
+       
+       
+
+        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
+        // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
+        // as an acceleration (ms^-2)
+        if (!characterController.isGrounded)
             {
                 moveDirection.y -= gravity * Time.deltaTime;
             }
@@ -69,7 +72,20 @@ public class PlayerController : MonoBehaviour
                 rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
                 playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
                 transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+
+            if (Input.GetKeyDown(KeyCode.F) && characterController.isGrounded)
+            {
+                RaycastHit hit;
+                Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.collider.gameObject.GetComponentInChildren<Light>()){
+
+                        hit.collider.gameObject.GetComponentInChildren<Light>().color = Color.green;
+                    }
+                }
             }
+        }
         
     }
     //private CharacterController controller;
