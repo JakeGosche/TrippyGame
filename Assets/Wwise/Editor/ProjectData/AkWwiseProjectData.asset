@@ -68,7 +68,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 1c693f0361d69a4886dfb67cd9a723ed
     GuidInternal: 
-    m_lastTime: -8585972015386239753
+    m_lastTime: -8585971997358318615
     List:
     - name: Play_Flute
       guid: 87cf363b954e024d8d9e28318b51f505
@@ -94,6 +94,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 8000000
       minDuration: 8000000
+    - name: Set_Game_Parameter
+      guid: 5ac8b32526751747a90c06cd738e85cf
+      id: 1402181228
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Set_Game_Parameter
+        ObjectType: 3
+      Path: Default Work Unit\Set_Game_Parameter
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -102,8 +114,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 15ae365a9089e14ea3eeeec5fbb8fb8f
     GuidInternal: 
-    m_lastTime: -8585972039427514836
-    List: []
+    m_lastTime: -8585972004895549720
+    List:
+    - name: Light_color
+      guid: 17a3d1c8a3dd9741b37eed3ae83d67a7
+      id: 4128318087
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Light_color
+        ObjectType: 13
+      Path: Default Work Unit\Light_color
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -132,13 +153,20 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 0e055fb27891e745bdde360f0d144888
     GuidInternal: 
-    m_lastTime: -8585972039427464833
-    List: []
+    m_lastTime: -8585972006819609770
+    List:
+    - name: Flute_Test_Trigger
+      guid: 1e7383596caec74ca4d9a0fd82a41390
+      id: 648465761
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Flute_Test_Trigger
+        ObjectType: 14
+      Path: Default Work Unit\Flute_Test_Trigger
   ExpandedItems:
   - /TrippyGame_WwiseProject
   - /TrippyGame_WwiseProject/Events
   - /TrippyGame_WwiseProject/Events/Default Work Unit
-  - /TrippyGame_WwiseProject/SoundBanks
-  - /TrippyGame_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

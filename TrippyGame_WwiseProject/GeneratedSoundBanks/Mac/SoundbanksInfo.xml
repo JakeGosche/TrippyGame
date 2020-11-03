@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1167860281" Language="SFX" Hash="2855202712">
+		<SoundBank Id="1167860281" Language="SFX" Hash="4254719224">
 			<ObjectPath>\SoundBanks\Default Work Unit\Flute</ObjectPath>
 			<ShortName>Flute</ShortName>
 			<Path>Flute.bnk</Path>
@@ -56,7 +56,7 @@
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2953616821">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1652162589">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>

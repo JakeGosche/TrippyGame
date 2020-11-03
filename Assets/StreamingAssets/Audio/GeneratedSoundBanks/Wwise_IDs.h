@@ -17,6 +17,16 @@ namespace AK
         static const AkUniqueID PLAY_FLUTE_END = 129809062U;
     } // namespace EVENTS
 
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID LIGHT_COLOR = 4128318087U;
+    } // namespace GAME_PARAMETERS
+
+    namespace TRIGGERS
+    {
+        static const AkUniqueID FLUTE_TEST_TRIGGER = 648465761U;
+    } // namespace TRIGGERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;

@@ -4,6 +4,7 @@
 		<UserProjectSettings Name="" ID="{1066AB4C-37F5-454E-944D-694A3D510982}">
 			<PropertyList>
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\RJGL\Desktop\OutrunTheSun\"/>
+				<Property Name="Event Action List\{25B3C85A-7526-4717-A90C-06CD738E85CF}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{3B36CF87-4E95-4D02-8D9E-28318B51F505}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{506F5DAC-4268-4630-A119-9B35AD92F113}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{829AE80C-4771-43CC-80D1-B3ABCB5652C9}\x64_Expand States" Type="string" Value=""/>
@@ -29,7 +30,7 @@
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value=""/>
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value=""/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}"/>
-				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups" Type="string" Value="VehuZRVJr0CdVixO1UsPGQGE5tX/////FbV2y7nKaU2FHsPM/CgWrQGE5tX/////"/>
+				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups" Type="string" Value="VehuZRVJr0CdVixO1UsPGQGEENb/////FbV2y7nKaU2FHsPM/CgWrQGEENb/////"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
 				<Property Name="MeterView\MeterMode1Viewpoint0" Type="int32" Value="1"/>
@@ -66,6 +67,7 @@
 				<Property Name="ProjectExplorer\x64_Expanded_6_1" Type="string" Value="zYg/eDcpKU27EQ/mO2POAA=="/>
 				<Property Name="ProjectExplorer\x64_Expanded_7_1" Type="string" Value="Fa42WpCJ4U6j7u7F+7j7jw=="/>
 				<Property Name="ProjectExplorer\x64_Expanded_8_1" Type="string" Value=""/>
+				<Property Name="RTPC\GameParameterSimValue\{C8D1A317-DDA3-4197-B37E-ED3AE83D67A7}" Type="Real64" Value="50"/>
 				<Property Name="SoundBank Manager\x64_Expand States" Type="string" Value=""/>
 				<Property Name="SoundBankHeaderFilePath" Type="string" Value="GeneratedSoundBanks\"/>
 				<Property Name="SoundBankPaths" Type="string">

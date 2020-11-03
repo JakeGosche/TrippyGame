@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{B25F050E-9178-45E7-BDDE-360F0D144888}" SchemaVersion="97">
 	<Triggers>
-		<WorkUnit Name="Default Work Unit" ID="{B25F050E-9178-45E7-BDDE-360F0D144888}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{B25F050E-9178-45E7-BDDE-360F0D144888}" PersistMode="Standalone">
+			<ChildrenList>
+				<Trigger Name="Flute_Test_Trigger" ID="{5983731E-AE6C-4CC7-A4D9-A0FD82A41390}"/>
+			</ChildrenList>
+		</WorkUnit>
 	</Triggers>
 </WwiseDocument>

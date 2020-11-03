@@ -28,7 +28,8 @@
 					<ChildrenList>
 						<Action Name="" ID="{8E30F332-57C5-4E9A-9207-B908A9252AC5}" ShortID="1007485266">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="ActionType" Type="int16" Value="4"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -36,10 +37,35 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{8D06F801-EB5F-4D1E-A10E-A993B68F15E1}" ShortID="975220910">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="4"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Flute wave MAIN 1 Intro" ID="{5A11D819-D0C4-4AE5-951D-132C1AC23C1F}" WorkUnitID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{6E025075-0374-4A87-86B5-41CC8DD0F82E}" ShortID="283911870">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Flute wave END" ID="{CE4E17F7-73D2-4B56-9D97-25FF25D00D26}" WorkUnitID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Set_Game_Parameter" ID="{25B3C85A-7526-4717-A90C-06CD738E85CF}">
+					<ChildrenList>
+						<Action Name="" ID="{DB708815-4B3B-4FF8-9BCA-103C44296F94}" ShortID="560516893">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Light_color" ID="{C8D1A317-DDA3-4197-B37E-ED3AE83D67A7}" WorkUnitID="{5A36AE15-8990-4EE1-A3EE-EEC5FBB8FB8F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
