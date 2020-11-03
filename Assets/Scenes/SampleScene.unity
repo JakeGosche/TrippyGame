@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f0c54269dc774469b1f778f1611d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: f2d9e0ec
+  triggerList: 
   useOtherObject: 0
   actionOnEventType: 0
   curveInterpolation: 4
