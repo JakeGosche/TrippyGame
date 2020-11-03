@@ -98,8 +98,13 @@ public class PlayerController : MonoBehaviour
                 Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
                 if (Physics.Raycast(ray, out hit))
                 {
+                    GameObject objectHit = hit.collider.gameObject;
+                    if (objectHit.GetComponentInChildren<PostWiseEvent>())
+                    {
+                        objectHit.GetComponentInChildren<PostWiseEvent>().ActivateSound();
+                    }
                     if (hit.collider.gameObject.GetComponentInChildren<Light>()){
-                        postWiseEvent.akEvent.Post(gameObject);
+                        
                         hit.collider.gameObject.GetComponentInChildren<Light>().color = Color.green;
                     }
                 }
