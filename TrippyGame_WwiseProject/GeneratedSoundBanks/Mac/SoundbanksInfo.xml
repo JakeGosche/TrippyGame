@@ -11,6 +11,51 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
+		<SoundBank Id="1167860281" Language="SFX" Hash="2855202712">
+			<ObjectPath>\SoundBanks\Default Work Unit\Flute</ObjectPath>
+			<ShortName>Flute</ShortName>
+			<Path>Flute.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1653871456" Name="Play_Flute" ObjectPath="\Events\Default Work Unit\Play_Flute" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="1006852465" Language="SFX">
+							<ShortName>Flute wave MAIN 1 Intro.wav</ShortName>
+							<Path>SFX\Flute wave MAIN 1 Intro_10C4C929.wem</Path>
+						</File>
+						<File Id="1048364051" Language="SFX">
+							<ShortName>Flute wave MAIN 2 loopable.wav</ShortName>
+							<Path>SFX\Flute wave MAIN 2 loopable_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="129809062" Name="Play_Flute_END" ObjectPath="\Events\Default Work Unit\Play_Flute_END" DurationType="OneShot" DurationMin="8.000000" DurationMax="8.000000">
+					<IncludedMemoryFiles>
+						<File Id="427307663" Language="SFX">
+							<ShortName>Flute wave END.wav</ShortName>
+							<Path>SFX\Flute wave END_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="427307663" Language="SFX">
+					<ShortName>Flute wave END.wav</ShortName>
+					<Path>SFX\Flute wave END_10C4C929.wem</Path>
+				</File>
+				<File Id="988366522" Language="SFX">
+					<ShortName>Flute wave PANIC loop interval 32s.wav</ShortName>
+					<Path>SFX\Flute wave PANIC loop interval 32s_10C4C929.wem</Path>
+				</File>
+				<File Id="1006852465" Language="SFX">
+					<ShortName>Flute wave MAIN 1 Intro.wav</ShortName>
+					<Path>SFX\Flute wave MAIN 1 Intro_10C4C929.wem</Path>
+				</File>
+				<File Id="1048364051" Language="SFX">
+					<ShortName>Flute wave MAIN 2 loopable.wav</ShortName>
+					<Path>SFX\Flute wave MAIN 2 loopable_D79FB2B7.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX" Hash="2953616821">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>

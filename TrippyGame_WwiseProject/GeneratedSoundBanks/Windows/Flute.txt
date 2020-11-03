@@ -1,0 +1,10 @@
+Event	ID	Name			Wwise Object Path	Notes
+	129809062	Play_Flute_END			\Default Work Unit\Play_Flute_END	
+	1653871456	Play_Flute			\Default Work Unit\Play_Flute	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	427307663	Flute wave END	C:\Users\RJGL\Documents\GitHub\TrippyGame\TrippyGame_WwiseProject\.cache\Windows\SFX\Flute wave END_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\flute\Flute wave END		1411264
+	988366522	Flute wave PANIC loop interval 32s	C:\Users\RJGL\Documents\GitHub\TrippyGame\TrippyGame_WwiseProject\.cache\Windows\SFX\Flute wave PANIC loop interval 32s_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\flute\Flute wave PANIC loop interval 32s		11289664
+	1006852465	Flute wave MAIN 1 Intro	C:\Users\RJGL\Documents\GitHub\TrippyGame\TrippyGame_WwiseProject\.cache\Windows\SFX\Flute wave MAIN 1 Intro_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\flute\Flute wave MAIN 1 Intro		14112064
+	1048364051	Flute wave MAIN 2 loopable	C:\Users\RJGL\Documents\GitHub\TrippyGame\TrippyGame_WwiseProject\.cache\Windows\SFX\Flute wave MAIN 2 loopable_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\flute\Flute wave MAIN 2 loopable		5644864
+

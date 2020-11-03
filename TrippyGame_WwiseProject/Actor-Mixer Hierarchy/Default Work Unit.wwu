@@ -1,6 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}" SchemaVersion="97">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="flute" ID="{7DBB4D19-B459-4DF9-BF0B-5EEE3D25FDFE}" ShortID="295908246">
+					<ChildrenList>
+						<Sound Name="Flute wave END" ID="{CE4E17F7-73D2-4B56-9D97-25FF25D00D26}" ShortID="252694624">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F332D3F3-360A-4303-9C9B-06EF828065AF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8D08B2C4-A5B0-40D0-9B2E-7774098AADF2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flute wave END" ID="{0C478671-275D-4BB7-A862-3F818490AE2E}">
+									<Language>SFX</Language>
+									<AudioFile>Flute wave END.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="427307663"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Flute wave END" ID="{0C478671-275D-4BB7-A862-3F818490AE2E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Flute wave MAIN 1 Intro" ID="{5A11D819-D0C4-4AE5-951D-132C1AC23C1F}" ShortID="675710397">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F332D3F3-360A-4303-9C9B-06EF828065AF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8D08B2C4-A5B0-40D0-9B2E-7774098AADF2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flute wave MAIN 1 Intro" ID="{18649A94-C2B4-4BEF-9D85-FEA254AEB141}">
+									<Language>SFX</Language>
+									<AudioFile>Flute wave MAIN 1 Intro.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1006852465"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Flute wave MAIN 1 Intro" ID="{18649A94-C2B4-4BEF-9D85-FEA254AEB141}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Flute wave MAIN 2 loopable" ID="{A228B19B-5F5B-4C7D-956F-5167135B1D04}" ShortID="143696337">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F332D3F3-360A-4303-9C9B-06EF828065AF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8D08B2C4-A5B0-40D0-9B2E-7774098AADF2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flute wave MAIN 2 loopable" ID="{930B9D65-5053-41E5-8248-78F7F61805EC}">
+									<Language>SFX</Language>
+									<AudioFile>Flute wave MAIN 2 loopable.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1048364051"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Flute wave MAIN 2 loopable" ID="{930B9D65-5053-41E5-8248-78F7F61805EC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Flute wave PANIC loop interval 32s" ID="{F4DA7EC7-B480-4898-839D-644EB43D4E0B}" ShortID="361842281">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F332D3F3-360A-4303-9C9B-06EF828065AF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8D08B2C4-A5B0-40D0-9B2E-7774098AADF2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flute wave PANIC loop interval 32s" ID="{75346168-1607-4C21-8D90-6667CBEC519D}">
+									<Language>SFX</Language>
+									<AudioFile>Flute wave PANIC loop interval 32s.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="988366522"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Flute wave PANIC loop interval 32s" ID="{75346168-1607-4C21-8D90-6667CBEC519D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

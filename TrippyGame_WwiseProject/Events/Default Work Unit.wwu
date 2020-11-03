@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{033F691C-D661-489A-86DF-B67CD9A723ED}" SchemaVersion="97">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{033F691C-D661-489A-86DF-B67CD9A723ED}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{033F691C-D661-489A-86DF-B67CD9A723ED}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Flute" ID="{3B36CF87-4E95-4D02-8D9E-28318B51F505}">
+					<ChildrenList>
+						<Action Name="" ID="{83B7DD5D-B661-4132-A693-E7FDDB3D5BCC}" ShortID="470687655">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Flute wave MAIN 1 Intro" ID="{5A11D819-D0C4-4AE5-951D-132C1AC23C1F}" WorkUnitID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C0C00BAC-5ECE-41A9-8639-FA7A7B2D41DC}" ShortID="348241717">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="80"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Flute wave MAIN 2 loopable" ID="{A228B19B-5F5B-4C7D-956F-5167135B1D04}" WorkUnitID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Flute_END" ID="{D62E89FB-8904-478D-A420-5A55125A2102}">
+					<ChildrenList>
+						<Action Name="" ID="{8E30F332-57C5-4E9A-9207-B908A9252AC5}" ShortID="1007485266">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Flute wave MAIN 2 loopable" ID="{A228B19B-5F5B-4C7D-956F-5167135B1D04}" WorkUnitID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6E025075-0374-4A87-86B5-41CC8DD0F82E}" ShortID="283911870">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Flute wave END" ID="{CE4E17F7-73D2-4B56-9D97-25FF25D00D26}" WorkUnitID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

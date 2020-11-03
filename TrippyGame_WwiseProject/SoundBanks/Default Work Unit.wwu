@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{783F88CD-2937-4D29-BB11-0FE63B63CE00}" SchemaVersion="97">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{783F88CD-2937-4D29-BB11-0FE63B63CE00}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{783F88CD-2937-4D29-BB11-0FE63B63CE00}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Flute" ID="{3F4EF4D8-D47F-4374-A9C3-CB9502224993}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_Flute_END" ID="{D62E89FB-8904-478D-A420-5A55125A2102}" WorkUnitID="{033F691C-D661-489A-86DF-B67CD9A723ED}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Flute wave PANIC loop interval 32s" ID="{F4DA7EC7-B480-4898-839D-644EB43D4E0B}" WorkUnitID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Flute wave MAIN 1 Intro" ID="{5A11D819-D0C4-4AE5-951D-132C1AC23C1F}" WorkUnitID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Flute wave END" ID="{CE4E17F7-73D2-4B56-9D97-25FF25D00D26}" WorkUnitID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Flute wave MAIN 2 loopable" ID="{A228B19B-5F5B-4C7D-956F-5167135B1D04}" WorkUnitID="{D5ECFC7A-E495-47A1-844A-0064A2AA5E7B}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Flute" ID="{3B36CF87-4E95-4D02-8D9E-28318B51F505}" WorkUnitID="{033F691C-D661-489A-86DF-B67CD9A723ED}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>
