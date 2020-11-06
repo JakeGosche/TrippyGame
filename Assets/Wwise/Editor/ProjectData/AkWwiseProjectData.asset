@@ -49,7 +49,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: cd883f783729294dbb110fe63b63ce00
     GuidInternal: 
-    m_lastTime: -8585971671236395508
+    m_lastTime: -8585971670607207068
     List:
     - name: Flute
       guid: d8f44e3f7fd47443a9c3cb9502224993
@@ -68,7 +68,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 1c693f0361d69a4886dfb67cd9a723ed
     GuidInternal: 
-    m_lastTime: -8585971671250236300
+    m_lastTime: -8585971670614648868
     List:
     - name: Play_Flute
       guid: 87cf363b954e024d8d9e28318b51f505
@@ -92,8 +92,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_Flute_END
       maxAttenuation: 0
-      maxDuration: 8000000
-      minDuration: 8000000
+      maxDuration: 8
+      minDuration: 8
     - name: Set_Game_Parameter
       guid: 5ac8b32526751747a90c06cd738e85cf
       id: 1402181228
@@ -114,7 +114,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 15ae365a9089e14ea3eeeec5fbb8fb8f
     GuidInternal: 
-    m_lastTime: -8585971671250226299
+    m_lastTime: -8585971670614638865
     List:
     - name: Light_color
       guid: 17a3d1c8a3dd9741b37eed3ae83d67a7
@@ -153,7 +153,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 0e055fb27891e745bdde360f0d144888
     GuidInternal: 
-    m_lastTime: -8585971671236395508
+    m_lastTime: -8585971670607197060
     List:
     - name: Flute_Test_Trigger
       guid: 1e7383596caec74ca4d9a0fd82a41390

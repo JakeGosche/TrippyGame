@@ -34,8 +34,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // We are grounded, so recalculate move direction based on axes
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
+        // Player and Camera rotation
+        if (canMove)
+        {
+            // We are grounded, so recalculate move direction based on axes
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         // Press Left Shift to run
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
@@ -67,9 +70,7 @@ public class PlayerController : MonoBehaviour
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
 
-        // Player and Camera rotation
-        if (canMove)
-        {
+       
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
@@ -85,6 +86,10 @@ public class PlayerController : MonoBehaviour
                     if (objectHit.GetComponentInChildren<PostWiseEvent>())
                     {
                         objectHit.GetComponentInChildren<PostWiseEvent>().ActivateSound();
+                    }
+                    if (objectHit.GetComponent<PodScript>())
+                    {
+                        objectHit.GetComponent<PodScript>().Activate();
                     }
                     if (hit.collider.gameObject.GetComponentInChildren<Light>()){
                         
