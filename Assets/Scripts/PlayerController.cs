@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
     public PostWiseEvent postWiseEvent;
+    public GameObject displayBoxObject;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -76,27 +77,37 @@ public class PlayerController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
 
-            if (Input.GetKeyDown(KeyCode.F) && characterController.isGrounded)
+            RaycastHit hit;
+            Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            bool displayBox = false;
+            if (Physics.Raycast(ray, out hit, 2))
             {
-                RaycastHit hit;
-                Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-                if (Physics.Raycast(ray, out hit))
+                
+                GameObject objectHit = hit.collider.gameObject;
+                if (objectHit.GetComponentInChildren<PostWiseEvent>() || objectHit.GetComponent<PodScript>() || hit.collider.gameObject.GetComponentInChildren<Light>())
                 {
-                    GameObject objectHit = hit.collider.gameObject;
-                    if (objectHit.GetComponentInChildren<PostWiseEvent>())
-                    {
-                        objectHit.GetComponentInChildren<PostWiseEvent>().ActivateSound();
-                    }
-                    if (objectHit.GetComponent<PodScript>())
-                    {
-                        objectHit.GetComponent<PodScript>().Activate();
-                    }
-                    if (hit.collider.gameObject.GetComponentInChildren<Light>()){
+                    displayBox = true;
                         
-                        hit.collider.gameObject.GetComponentInChildren<Light>().color = Color.green;
+                    if (Input.GetKeyDown(KeyCode.F) && characterController.isGrounded)
+                    {
+                        if (objectHit.GetComponentInChildren<PostWiseEvent>())
+                        {
+                            objectHit.GetComponentInChildren<PostWiseEvent>().ActivateSound();
+                        }
+                        if (objectHit.GetComponent<PodScript>())
+                        {
+                            objectHit.GetComponent<PodScript>().Activate();
+                        }
+                        if (hit.collider.gameObject.GetComponentInChildren<Light>())
+                        {
+
+                            hit.collider.gameObject.GetComponentInChildren<Light>().color = Color.green;
+                        }
                     }
                 }
             }
+
+            displayBoxObject.SetActive(displayBox);
         }
         
     }
