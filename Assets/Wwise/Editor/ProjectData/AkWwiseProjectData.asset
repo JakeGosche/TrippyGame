@@ -92,8 +92,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_Flute_END
       maxAttenuation: 0
-      maxDuration: 8
-      minDuration: 8
+      maxDuration: 8000000
+      minDuration: 8000000
     - name: Set_Game_Parameter
       guid: 5ac8b32526751747a90c06cd738e85cf
       id: 1402181228
