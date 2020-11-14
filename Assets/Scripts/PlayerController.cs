@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
             {
                 
                 GameObject objectHit = hit.collider.gameObject;
-                if (objectHit.GetComponentInChildren<PostWiseEvent>() || objectHit.GetComponent<PodScript>() || hit.collider.gameObject.GetComponentInChildren<Light>())
+                if (objectHit.GetComponentInChildren<PostWiseEvent>() || objectHit.GetComponent<PodScript>() || hit.collider.gameObject.GetComponent<PuzzleObject>())
                 {
                     displayBox = true;
                         
@@ -98,10 +98,10 @@ public class PlayerController : MonoBehaviour
                         {
                             objectHit.GetComponent<PodScript>().Activate();
                         }
-                        if (hit.collider.gameObject.GetComponentInChildren<Light>())
+                        if (hit.collider.gameObject.GetComponent<PuzzleObject>())
                         {
 
-                            hit.collider.gameObject.GetComponentInChildren<Light>().color = Color.green;
+                            objectHit.GetComponent<PuzzleObject>().Activate();
                         }
                     }
                 }
