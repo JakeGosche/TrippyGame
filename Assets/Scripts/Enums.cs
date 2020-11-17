@@ -10,4 +10,15 @@ public static class Enums
         Down,
         Right
     }
+
+    public enum Speaker
+    {
+        Rosalyn,
+        Eyre,
+        Shapley,
+        Chong,
+        Mitropoulos,
+        York,
+        Cassidy
+    }
 }
