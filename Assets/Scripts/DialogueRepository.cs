@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using static Enums;
 
-public class DialogueRespository : MonoBehaviour
+public class DialogueRepository : MonoBehaviour
 {
 
 

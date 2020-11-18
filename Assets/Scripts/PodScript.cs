@@ -20,6 +20,14 @@ public class PodScript : MonoBehaviour
 
     public void Activate()
     {
-        dreamManager.DisplayDream(podId);
+        if (podId == 7)
+        {
+            GameManager gameManager = FindObjectOfType<GameManager>();
+            gameManager.StartCoroutine(gameManager.InteractWithInterface());
+        }
+        else
+        {
+            dreamManager.DisplayDream(podId);
+        }
     }
 }

@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        bool displayBox = false;
         // Player and Camera rotation
         if (canMove)
         {
@@ -79,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
             RaycastHit hit;
             Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-            bool displayBox = false;
+            //bool displayBox = false;
             if (Physics.Raycast(ray, out hit, 2))
             {
                 
@@ -107,8 +108,8 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            displayBoxObject.SetActive(displayBox);
+           
         }
-        
+        displayBoxObject.SetActive(displayBox);
     }
 }

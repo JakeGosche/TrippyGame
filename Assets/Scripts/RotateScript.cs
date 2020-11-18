@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotateScript : MonoBehaviour
 {
+    public float rotateSpeed = .03f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class RotateScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        this.transform.eulerAngles = new Vector3(0, 0, this.transform.eulerAngles.z + .03f);
+        this.transform.eulerAngles = new Vector3(0, 0, this.transform.eulerAngles.z + rotateSpeed);
     }
 }
