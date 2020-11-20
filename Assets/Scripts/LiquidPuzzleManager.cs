@@ -7,7 +7,8 @@ using static Enums;
 public class LiquidPuzzleManager : MonoBehaviour
 {
     public GameManager gameManager;
-    public PuzzleTile[] tiles;
+    public PuzzleRow[] tiles;
+    public List<LiquidPuzzleEnding> endingPoints;
     public Image exitImage;
     public DreamManager dreamManager;
     // Start is called before the first frame update
@@ -29,146 +30,201 @@ public class LiquidPuzzleManager : MonoBehaviour
 
     public void UpdateBoard()
     {
-        foreach (PuzzleTile tile in tiles)
+        foreach (PuzzleRow row in tiles)
         {
-            tile.occupied = false;
-            tile.pipeImage.color = Color.black;
+            foreach (PuzzleTile pt in row.rowTiles)
+            {
+                pt.occupied = false;
+                pt.pipeImage.color = Color.black;
+            }
+        }
+        foreach(LiquidPuzzleEnding ending in endingPoints)
+        {
+            ending.bottomCircle.color = Color.white;
+            ending.attachedTube.color = Color.white;
         }
         exitImage.color = Color.black;
         bool activeRed = false;
         bool activeWhite = false;
-        int tileRed = 20;
-        int tileWhite = 0;
+        int tileColumn = 0;
+        int tileRow = 4;
+        //int tileWhite = 0;
         Directions redMoving = Directions.Right;
-        Directions whiteMoving = Directions.Down;
-        if (IsConnected(tileRed, redMoving))
+        //Directions whiteMoving = Directions.Down;
+        if (IsConnected(tileColumn, tileRow, redMoving))
         {
             activeRed = true;
-            tiles[20].occupied = true;
-            tiles[20].pipeImage.color = Color.red;
+            tiles[tileRow].rowTiles[tileColumn].occupied = true;
+            tiles[tileRow].rowTiles[tileColumn].pipeImage.color = Color.red;
         }
 
-        if (IsConnected(tileWhite, whiteMoving))
-        {
-            activeWhite = true;
-            tiles[0].occupied = true;
-            tiles[0].pipeImage.color = Color.white;
-        }
+        //if (IsConnected(tileWhite, whiteMoving))
+        //{
+        //    activeWhite = true;
+        //    tiles[0].occupied = true;
+        //    tiles[0].pipeImage.color = Color.white;
+        //}
 
-        while (activeRed || activeWhite)
+        while (activeRed )//|| activeWhite)
         {
-            if (activeRed)
+            //if (activeRed)
+            //{
+            int oldColumn = tileColumn;
+            int oldRow = tileRow;
+                redMoving = (OppositeDirection(redMoving) == tiles[tileRow].rowTiles[tileColumn].input1) ? tiles[tileRow].rowTiles[tileColumn].input2 : tiles[tileRow].rowTiles[tileColumn].input1;
+            int result;
+            if (redMoving == Directions.Left || redMoving == Directions.Right)
             {
-                redMoving = (OppositeDirection(redMoving) == tiles[tileRed].input1) ? tiles[tileRed].input2 : tiles[tileRed].input1;
-                tileRed = GetNextTile(tileRed, redMoving);
-                if(tileRed < 0)
+                result = GetNextColumn(tileRow, tileColumn, redMoving);
+                tileColumn = result;
+            }
+            else
+            {
+                result = GetNextRow(tileRow, tileColumn, redMoving);
+                tileRow = result;
+            }
+                if (result < 0)
                 {
-                    if (tileRed == -2)
+                    if (result == -2)
                     {
-                        gameManager.unlockedConvos[4] = true;
-                        exitImage.color = Color.red;
+                        LiquidPuzzleEnding liquidPuzzleEnding = endingPoints.Find(x => x.attachedColumn == oldColumn && x.attachedRow == oldRow);
+                        if (liquidPuzzleEnding != null)
+                        {
+                            gameManager.liquidUnlockedPodId = liquidPuzzleEnding.podId;
+
+                            liquidPuzzleEnding.bottomCircle.color = Color.red;
+                            liquidPuzzleEnding.attachedTube.color = Color.red;
+                    }
+                        else
+                        {
+                            Debug.Log("Error finding ending column!");
+                        }
                     }
                     activeRed = false;
                 }
                 else 
                 {
-                    if(IsConnected(tileRed, redMoving))
+                    if(IsConnected(tileColumn, tileRow, redMoving))
                     {
-                        tiles[tileRed].pipeImage.color = Color.red;
-                        tiles[tileRed].occupied = true;
+                        tiles[tileRow].rowTiles[tileColumn].pipeImage.color = Color.red;
+                        tiles[tileRow].rowTiles[tileColumn].occupied = true;
                     }
                     else
                     {
                         activeRed = false;
                     }
                 }
-            }
+            //}
 
-            if (activeWhite)
-            {
-                whiteMoving = (OppositeDirection(whiteMoving) == tiles[tileWhite].input1) ? tiles[tileWhite].input2 : tiles[tileWhite].input1;
-                tileWhite = GetNextTile(tileWhite, whiteMoving);
-                if (tileWhite < 0)
-                {
-                    if (tileWhite == -2)
-                    {
+            //if (activeWhite)
+            //{
+            //    whiteMoving = (OppositeDirection(whiteMoving) == tiles[tileWhite].input1) ? tiles[tileWhite].input2 : tiles[tileWhite].input1;
+            //    tileWhite = GetNextTile(tileWhite, whiteMoving);
+            //    if (tileWhite < 0)
+            //    {
+            //        if (tileWhite == -2)
+            //        {
                        
-                        exitImage.color = Color.white;
-                    }
-                    activeWhite = false;
-                }
-                else
-                {
-                    if (IsConnected(tileWhite, whiteMoving))
-                    {
-                        tiles[tileWhite].pipeImage.color = Color.white;
-                        tiles[tileWhite].occupied = true;
-                    }
-                    else
-                    {
-                        activeWhite = false;
-                    }
-                }
-            }
+            //            exitImage.color = Color.white;
+            //        }
+            //        activeWhite = false;
+            //    }
+            //    else
+            //    {
+            //        if (IsConnected(tileWhite, whiteMoving))
+            //        {
+            //            tiles[tileWhite].pipeImage.color = Color.white;
+            //            tiles[tileWhite].occupied = true;
+            //        }
+            //        else
+            //        {
+            //            activeWhite = false;
+            //        }
+            //    }
+            //}
         }
 
     }
 
-    public int GetNextTile(int squareId, Directions movingTowards)
+    public int GetNextColumn(int row, int column, Directions movingTowards)
+    {
+        switch (movingTowards)
+        {
+            case Directions.Left:
+                if (column == 0)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return column - 1;
+                }
+            default:
+                if (column == 8)
+                {
+                    if (row == 2 || row == 6)
+                    {
+
+                        return -2;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+                else
+                {
+                    return column + 1;
+                }
+
+        }
+    }
+
+    public int GetNextRow(int row, int column, Directions movingTowards)
     {
         switch (movingTowards)
         {
             case Directions.Down:
-                if(squareId >= 20)
-                {
-                    return -1;
-                }
-                else
-                {
-                    return squareId + 5;
-                }
-            case Directions.Left:
-                if(squareId == 0 || squareId % 5 == 0)
-                {
-                    return -1;
-                }
-                else
-                {
-                    return squareId - 1;
-                }
-            case Directions.Up:
-                if(squareId <= 4)
-                {
-                    return -1;
-                }
-                else
-                {
-                    return squareId - 5;
-                }
-            default:
-                if (squareId == 14)
-                {
-                    return -2;
-                }
-                else
-                {
 
-                    if ((squareId + 1) % 5 == 0)
+                if (row == 8)
+                {
+                    if (column == 2 || column == 6)
                     {
-                        return -1;
+
+                        return -2;
                     }
                     else
                     {
-                        return squareId + 1;
+                        return -1;
                     }
                 }
+                else
+                {
+                    return row + 1;
+                }
+            default:
+                if (row == 0)
+                {
+                    if (column == 2 || column == 6)
+                    {
 
+                        return -2;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+                else
+                {
+                    return row - 1;
+                }
         }
     }
 
-    public bool IsConnected(int squareID, Directions movingTowards)
+    public bool IsConnected(int column, int row, Directions movingTowards)
     {
-        PuzzleTile tile = tiles[squareID];
+        PuzzleTile tile = tiles[row].rowTiles[column];
         if (tile.occupied)
         {
             return false;

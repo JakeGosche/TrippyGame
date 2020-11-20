@@ -6,10 +6,11 @@ public class PodScript : MonoBehaviour
 {
     public int podId;
     public DreamManager dreamManager;
+    GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -22,12 +23,19 @@ public class PodScript : MonoBehaviour
     {
         if (podId == 7)
         {
-            GameManager gameManager = FindObjectOfType<GameManager>();
+           
             gameManager.StartCoroutine(gameManager.InteractWithInterface());
         }
         else
         {
-            dreamManager.DisplayDream(podId);
+            if (gameManager.stage > 0)
+            {
+                dreamManager.DisplayDream(podId);
+            }
+            else
+            {
+                StartCoroutine(gameManager.DisplayInnerThoughts("I should check out the terminal below that large blue screen."));
+            }
         }
     }
 }

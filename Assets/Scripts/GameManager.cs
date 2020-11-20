@@ -7,16 +7,20 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject menuBackground, mainMenu, optionsMenu,  quitMenu, screen, console;
+    public GameObject menuBackground, mainMenu, optionsMenu,  quitMenu, screen, console, dialogueOption;
     public PlayerController player;
     public DialogueRepository dialogueManager;
     public bool puzzle1Status = false;
     public Dictionary<int, bool> unlockedDreams;
     public Dictionary<int, bool> unlockedConvos;
     public TMP_Text computerScreen;
-    public Text reviveScreen;
+    public Text reviveScreen, innerThoughts, dialogueOptionText;
     public RotateScript rotateScript;
     public Image image, lines1, lines2;
+    public int liquidUnlockedPodId;
+    public int stage = 0;
+    public bool awaitingInput = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +31,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player.transform.eulerAngles);
+        
     }
 
     public void StartGame()
     {
+        stage = 0;
         StartCoroutine(StartGameRoutine());
     }
 
@@ -91,6 +96,11 @@ public class GameManager : MonoBehaviour
         player.canMove = true;
     }
 
+    public void ReceiveInput()
+    {
+        awaitingInput =false;
+    }
+
     public IEnumerator StartWalking()
     {
         while (player.transform.position.x > 8)
@@ -100,12 +110,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public IEnumerator DisplayInnerThoughts(string display)
+    {
+        innerThoughts.text = display;
+        innerThoughts.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
+        innerThoughts.text = "";
+        innerThoughts.gameObject.SetActive(false);
+    }
+
     public IEnumerator InteractWithInterface()
     {
         player.canMove = false;
+        stage = 1;
         image.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.2f);
-        player.transform.position = new Vector3(-20.55f, 1, -38.73f);
+        player.transform.position = new Vector3(-21.05f, 1, -39.23f);
         player.transform.eulerAngles = new Vector3(0, 210, 0);
         yield return new WaitForSeconds(1);
         while (player.transform.eulerAngles.x < 20)
@@ -177,16 +197,33 @@ public class GameManager : MonoBehaviour
         Enums.Speaker lastSpeaker = Enums.Speaker.Eyre;
         foreach(ConversationObject co in convo)
         {
-            if(co.Speaker != lastSpeaker)
+            if (co.Speaker == Enums.Speaker.Rosalyn)
             {
+                awaitingInput = true;
+                dialogueOptionText.text = co.Message;
+                dialogueOption.gameObject.SetActive(true);
+                while (awaitingInput)
+                {
+                    yield return null;
+                }
+                dialogueOptionText.text = "";
                 computerScreen.text = "";
-                yield return new WaitForSeconds(2);
-                lastSpeaker = co.Speaker;
-                computerScreen.color = co.Speaker == Enums.Speaker.Eyre ? Color.white : Color.yellow;
+                dialogueOption.gameObject.SetActive(false);
             }
+            else
+            {
+                if (co.Speaker != lastSpeaker)
+                {
+                    
+                    yield return new WaitForSeconds(2);
+                    lastSpeaker = co.Speaker;
+                    //computerScreen.color = co.Speaker == Enums.Speaker.Eyre ? Color.white : Color.yellow;
+                }
 
-            computerScreen.text = computerScreen.text + co.Message + Environment.NewLine;
-            yield return new WaitForSeconds(2);
+
+                computerScreen.text = computerScreen.text + co.Message + Environment.NewLine;
+            }
+                yield return new WaitForSeconds(2);
         }
         computerScreen.text = "";
         while (player.transform.position.y > 1)
